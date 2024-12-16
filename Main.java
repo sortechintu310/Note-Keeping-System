@@ -33,7 +33,7 @@ public class Main {
         System.out.println("[h] Help.");
         System.out.println("[e] Exit Noteable.");
 
-        do {
+        while(true) {
             System.out.print("\n.\\Noteable\\~ ");
 
             choice = sc.next().charAt(0);
@@ -117,7 +117,10 @@ public class Main {
                     System.out.println("[d] Delete a Note.");
                     System.out.println("[h] Help.");
                     System.out.println("[e] Exit Noteable.");
-                } else {
+                } else if(choice == 'e'){
+                    System.out.println("Thankyou for using Noteable!.");
+                    break;
+                }else {
                     throw new InvalidNoteException(choice+" is not recognized as an internal or external command!\nPress h.");
                 }
 
@@ -125,7 +128,7 @@ public class Main {
                 System.err.println("Error: "+e.getMessage());
             }
 
-        } while (choice != 'e');
+        }
 
     }
 }
